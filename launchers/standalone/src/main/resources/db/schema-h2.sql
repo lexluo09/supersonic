@@ -558,6 +558,21 @@ CREATE TABLE IF NOT EXISTS `s2_term` (
     );
 COMMENT ON TABLE s2_term IS 'term info';
 
+CREATE TABLE IF NOT EXISTS `s2_tool`
+(
+    `id`         INT AUTO_INCREMENT,
+    `name`       varchar(100)  NULL,
+    `type`      varchar(100)   NULL,
+    `resource_ids`     LONGVARCHAR  NULL,
+    `created_at` TIMESTAMP   NULL,
+    `created_by` varchar(100) null,
+    `updated_at` TIMESTAMP    NULL,
+    `updated_by` varchar(100) NULL,
+    `config`     LONGVARCHAR  NULL,
+    `comment`     LONGVARCHAR  NULL,
+    PRIMARY KEY (`id`)
+); COMMENT ON TABLE s2_plugin IS 'tool information table';
+
 CREATE TABLE IF NOT EXISTS `s2_user_token` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(255) NOT NULL,

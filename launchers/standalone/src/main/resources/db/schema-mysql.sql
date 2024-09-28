@@ -539,6 +539,20 @@ CREATE TABLE IF NOT EXISTS `s2_term` (
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT ='术语表';
 
+CREATE TABLE IF NOT EXISTS `s2_tool` (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+    `type` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'DataSet,Function',
+    `resource_ids` text COLLATE utf8mb4_unicode_ci,
+    `created_at` datetime DEFAULT NULL,
+    `created_by` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+    `updated_at` datetime DEFAULT NULL,
+    `updated_by` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+    `config` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+    `comment` text COLLATE utf8mb4_unicode_ci,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE `s2_user_token` (
      `id` bigint NOT NULL AUTO_INCREMENT,
      `name` VARCHAR(255) NOT NULL,
